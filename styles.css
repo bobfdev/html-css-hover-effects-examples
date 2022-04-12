@@ -103,12 +103,41 @@
     margin-bottom: 1rem;
 }
 
+.card-title::after {
+    content: '';
+    position: absolute;
+    top: -0.25rem;
+    left: -2rem;
+    bottom: -0.25rem;
+    width: calc(100% + 4rem);
+    background: #ee6352;
+    z-index: -1;
+    transform: scaleX(0.05);
+    transform-origin: left;
+    transition: transform 250ms ease-in;
+}
+
+.card:hover .card-title::after {
+    transform: scaleX(1);
+}
+
 .card-body {
     position: relative;
     z-index: 1;
-    color: transparent;
+    /* color: transparent;
     margin: 0;
-    transition: color 150ms 350ms;
+    transition: color 150ms 350ms; */
+}
+
+.card-body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: -1;
 }
 
 body {
